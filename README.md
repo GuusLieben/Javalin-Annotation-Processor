@@ -1,7 +1,9 @@
 # Javalin-Annotation-Processor
 Processor to provide basic endpoint annotations to Javalin.
 Non-void methods annotated with `@Endpoint` will be converted into non-blocking endpoints.
-Additionally, classes annotated with @Endpoint will prepend the endpoints of all annotated methods with the provided path.
+Additionally, classes annotated with `@Endpoint` will prepend the endpoints of all annotated methods with the provided path.
+
+Methods returning types other than `String`, `byte[]`, `InputStream`, or `CompletableFuture` will be serialized to a JSON string using Gson.
 
 Note that void methods will require a Context parameter, this is enforced by the processor. 
 Non-void methods can choose whether or not the Context should be provided.
