@@ -34,6 +34,10 @@ public class JavalinProc {
         init(port, objs);
     }
 
+    public static Javalin getApp() {
+        return APP;
+    }
+
     public static void init(int port, Object... objs) {
         for (Object obj : objs) {
             if (obj instanceof String) handleEndpointsInPackage((String) obj);
